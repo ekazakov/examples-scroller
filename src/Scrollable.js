@@ -5,8 +5,7 @@ export class Scrollable extends React.Component {
         super(...args);
         this.state = {
             viewportHeight: window.innerHeight,
-            scrollTop: window.pageYOffset,
-            offsetTopIndex: 0
+            scrollTop: window.pageYOffset
         };
 
         this.onScroll = this.onScroll.bind(this);
@@ -19,7 +18,7 @@ export class Scrollable extends React.Component {
     }
 
     render() {
-        const from = this.state.offsetTopIndex;
+        const from = 0;
         const to = this.state.viewportHeight / this.props.rowHeight;
         return <div>
             {React.Children.map(
