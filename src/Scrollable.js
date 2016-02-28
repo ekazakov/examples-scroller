@@ -8,6 +8,14 @@ export class Scrollable extends React.Component {
             scrollTop: window.pageYOffset,
             offsetTopIndex: 0
         };
+
+        this.onScroll = this.onScroll.bind(this);
+    }
+
+    onScroll() {}
+
+    componentDidMount() {
+        window.addEventListener('scroll', this.onScroll);
     }
 
     render() {
